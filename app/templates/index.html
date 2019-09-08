@@ -1,3 +1,4 @@
+{% import 'macros.html' as macro%} 
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,32 +13,24 @@
         <!-- Batman news -->
         <h3>BATMAN </h3>
         <ul>
-            {%for batman_news in batman%}
-                <li>{{batman_news.title}}</li>
-            {%endfor%}
+            {{macro.displayNewsList(batman)}}
         </ul>
 
         <!-- FIFA news -->
         <h3>FIFA 20 </h3>
         <ul>
-            {%for fifa_news in fifa20%}
-                <li>{{fifa_news.title}}</li>
-            {%endfor%}
+                {{macro.displayNewsList(fifa20)}}
         </ul>
 
         <!-- Premier League News  -->
         <h3>PREMIER LEAGUE </h3>
         <ul>
-            {%for pl_news in premierLeague%}
-                <li>{{pl_news.title}}</li>
-            {%endfor%}
+                {{macro.displayNewsList(premierLeague)}}
         </ul>
         <!-- Netflix News  -->
         <h3>NETFLIX </h3>
         <ul>
-            {%for netflix_news in netflix%}
-                <li>{{netflix_news.title}}</li>
-            {%endfor%}
+                {{macro.displayNewsList(netflix)}}
         </ul>
 
         
