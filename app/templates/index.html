@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        {% if title %}
+        <title> {{ title }}</title>
+        {% else %}
+        <title> Welcome to the News Room </title>
+        {% endif %}
+    </head>
+    <body>
+        <!-- Batman news -->
+        <h3>BATMAN </h3>
+        <ul>
+            {%for batman_news in batman%}
+                <li>{{batman_news.title}}</li>
+            {%endfor%}
+        </ul>
+
+        <!-- FIFA news -->
+        <h3>FIFA 20 </h3>
+        <ul>
+            {%for fifa_news in fifa20%}
+                <li>{{fifa_news.title}}</li>
+            {%endfor%}
+        </ul>
+
+        <!-- Premier League News  -->
+        <h3>PREMIER LEAGUE </h3>
+        <ul>
+            {%for pl_news in premierLeague%}
+                <li>{{pl_news.title}}</li>
+            {%endfor%}
+        </ul>
+        <!-- Netflix News  -->
+        <h3>NETFLIX </h3>
+        <ul>
+            {%for netflix_news in netflix%}
+                <li>{{netflix_news.title}}</li>
+            {%endfor%}
+        </ul>
+
+        
+
+    </body>
+</html>
