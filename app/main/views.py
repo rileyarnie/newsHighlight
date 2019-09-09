@@ -1,9 +1,9 @@
 from flask import render_template
-from app import app
-from .request import get_sources, get_articles
+from . import main
+from ..request import get_sources, get_articles
 
 # Views
-@app.route('/sources')
+@main.route('/sources')
 
 def index():
     
@@ -21,7 +21,7 @@ def index():
 
     return render_template('sources.html', batman = batman_news)
 
-@app.route('/articles')
+@main.route('/articles')
 def showArticles():
 
     '''
@@ -41,7 +41,7 @@ def showArticles():
     return render_template('articles.html', technology = tech_news, climate = climate_news, uspolitics = us_politics ,sports = sports_news)
 
 
-@app.route('/trending')
+@main.route('/trending')
 def trending_articles():
     
     '''
@@ -54,7 +54,7 @@ def trending_articles():
 
     return render_template('trending.html', trending = trending_news)
 
-@app.route('/')
+@main.route('/')
 def home_articles():
     
     '''

@@ -1,23 +1,23 @@
-from app import app
 import urllib.request, json
-from .models import news
+from .models import Sources, Articles
+from config import Config
 
 import requests
 
-Sources = news.Sources
-Articles = news.Articles
-
+# Sources = news.Sources
+# Articles = news.Articles
+    # Getting api key
+api_key = Config.API_KEY
+    # gettting the news base url
+base_url = Config.NEWS_API_BASE_URL 
+articles_url = Config.NEWS_ARTICLES_API_URL 
 
 def get_sources():
     """
     Function that gets the json response to our url request
     """
 
-    # Getting api key
-    api_key = app.config["NEWS_API_KEY"]
 
-    # gettting the news base url
-    base_url = app.config["NEWS_API_BASE_URL"]
 
     get_sources_url = base_url.format(api_key)
 
@@ -70,18 +70,13 @@ def get_articles(category):
     """
     Function that gets the json response to our url request
     """
-     #Getting api key
-    api_key = app.config['NEWS_API_KEY']
 
-    base_url = app.config['NEWS_ARTICLES_API_URL']
-
-    get_articles_url = base_url.format(category,api_key)
+    get_articles_url = articles_url.format(category,api_key)
     article_response = requests.get(get_articles_url)
     get_articles_response = article_response.json()
     # source_results = process_sources(source_results_list)
     # return source_results
-    print("********************************************************")
-    print(get_articles_response)   
+  
 
     
     article_result = None 
