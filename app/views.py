@@ -21,3 +21,14 @@ def index():
 
     return render_template('sources.html', batman = batman_news)
 
+@app.route('/')
+@app.route('/articles')
+def showArticles():
+
+    '''
+    View news page function that returns the news articles page and its data
+    '''
+    footy = get_articles('football')
+   
+
+    return render_template('articles.html',football = footy)
