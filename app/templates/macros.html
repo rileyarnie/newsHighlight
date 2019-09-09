@@ -43,3 +43,44 @@
 {% endmacro %}
 
 
+
+{%macro display_Articles(football)%}
+<div class="container">
+
+
+        <!-- Container -->
+        <div class="row">
+                {% for news in football%}
+        
+                <!-- Column -->
+                <div class="col-md-4 mb-4 d-flex align-items-stretch">
+              
+                  <!--Card-->
+                  <div class="card">
+              
+                    <!--Card image-->
+                    <div class="view">
+                      <img src="{{news.urlToImage}}" class="card-img-top"
+                        alt="">
+                      <a href="#">
+                        <div class="mask rgba-white-slight"></div>
+                      </a>
+                    </div>
+              
+                    <!--Card content-->
+                    <div class="card-body">
+                      <!--Title-->
+                      <h4 class="card-title uppercase">{{news.title}}</h4>
+                      <!--Text-->
+                      <p>{{news.description}}</p>
+                      <a href="{{news.url}}"><button class="mb-0 waves-effect btn-sm btn-outline-danger">Read More</button></a>
+        
+                    </div>
+              
+                </div>
+                </div>
+                {% endfor %}
+        </div>
+        
+        </div>
+{%endmacro%}
