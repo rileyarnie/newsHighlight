@@ -21,7 +21,6 @@ def index():
 
     return render_template('sources.html', batman = batman_news)
 
-@app.route('/')
 @app.route('/articles')
 def showArticles():
 
@@ -40,3 +39,31 @@ def showArticles():
    
 
     return render_template('articles.html', technology = tech_news, climate = climate_news, uspolitics = us_politics ,sports = sports_news)
+
+
+@app.route('/trending')
+def trending_articles():
+    
+    '''
+    View news page function that returns the trending news articles page and its data
+    '''
+
+    
+    trending_news = get_articles('trending')
+   
+
+    return render_template('trending.html', trending = trending_news)
+
+@app.route('/')
+def home_articles():
+    
+    '''
+    View news page function that returns the trending news articles page and its data
+    '''
+    batsy_news = get_articles('batman')
+    dc_news = get_articles('dccomics')
+    marvel_news = get_articles('marvel')
+    africa_news = get_articles('africa')
+   
+
+    return render_template('index.html', batman = batsy_news, dccomics = dc_news, marvel = marvel_news, africa = africa_news)

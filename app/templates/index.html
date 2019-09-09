@@ -1,39 +1,24 @@
-{% import 'macros.html' as macro%} 
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        {% if title %}
-        <title> {{ title }}</title>
-        {% else %}
-        <title> Welcome to the News Room </title>
-        {% endif %}
-    </head>
-    <body>
-        <!-- Batman news -->
-        <h3>BATMAN </h3>
-        <ul>
-            {{macro.displayNewsList(batman)}}
-        </ul>
+{% extends 'base.html'%}
+{% import 'macros.html' as macro%}
+{% block content %}
 
-        <!-- FIFA news -->
-        <h3>FIFA 20 </h3>
-        <ul>
-                {{macro.displayNewsList(fifa20)}}
-        </ul>
+<!-- Batman news -->
+<h2 class="mt-4 text-center "><strong>BATMAN </strong></h2>
+<div class="row">{{macro.display_Articles(batman)}}</div>
 
-        <!-- Premier League News  -->
-        <h3>PREMIER LEAGUE </h3>
-        <ul>
-                {{macro.displayNewsList(premierLeague)}}
-        </ul>
-        <!-- Netflix News  -->
-        <h3>NETFLIX </h3>
-        <ul>
-                {{macro.displayNewsList(netflix)}}
-        </ul>
 
-        
+<!-- DC COMICS NEWS  -->
+<h2 class="mt-4 text-center "><strong>DC COMICS </strong></h2>
+<div class="row">{{macro.display_Articles(dccomics)}}</div>
 
-    </body>
-</html>
+
+<!-- MARVEL NEWS  -->
+<h2 class="mt-4 text-center "><strong>MARVEL COMICS </strong></h2>
+<div class="row">{{macro.display_Articles(marvel)}}</div>
+
+
+<!-- ARSENAL NEWS  -->
+<h2 class="mt-4 text-center "><strong>AFRICA NEWS </strong></h2>
+<div class="row">{{macro.display_Articles(africa)}}</div>
+
+{% endblock %}

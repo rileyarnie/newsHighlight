@@ -2,8 +2,18 @@
 {% import 'macros.html' as macro %}
 
 {% block content %}
+<!-- technology news -->
+<h2 class="mt-4 text-center "><strong>TECHNOLOGY</strong></h2>
+<div class="row">{{macro.display_Articles(technology)}}</div>
 
-<div class="row">{{macro.display_Articles(football)}}</div>
+<!-- sports news  -->
+<h2 class="mt-4 text-center "><strong>SPORTS</strong></h2>
+<div class="row">{{macro.display_Articles(sports)}}</div>
+
+<!-- climate news -->
+<h2 class="mt-4 text-center "><strong>CLIMATE</strong></h2>
+<div class="row">{{macro.display_Articles(climate)}}</div>
+
 
 
 {% endblock %}
