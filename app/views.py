@@ -1,10 +1,10 @@
 from flask import render_template
 from app import app
-from .request import get_news
+from .request import get_sources, get_articles
 
 # Views
-@app.route('/')
-@app.route('/home')
+@app.route('/sources')
+
 def index():
     
     '''
@@ -12,22 +12,12 @@ def index():
     '''
 
 
-    title = 'Home - Welcome to The News Room'
 
-    batman = get_news('batman')
-    fifa20 = get_news('fifa20')
-    premierLeague = get_news('premierLeague')
-    netflix = get_news('netflix')
+    batman_news = get_sources()
+
+    title = 'Home|Welcome to The News Room'
 
 
 
+    return render_template('sources.html', batman = batman_news)
 
-    return render_template('index.html', batman = batman, fifa20 = fifa20, premierLeague = premierLeague, netflix = netflix)
-
-
-def news(news_id):
-
-    '''
-    View news page function that returns the news details page and its data
-    '''
-    return render_template('news.html',id = news_id)
