@@ -28,7 +28,15 @@ def showArticles():
     '''
     View news page function that returns the news articles page and its data
     '''
-    footy = get_articles('football')
+
+    tech_news = get_articles('technology')
+
+    climate_news = get_articles('climate')
+
+    us_politics = get_articles ('uspolitics')
+
+    
+    sports_news = get_articles('sports')
    
 
-    return render_template('articles.html',football = footy)
+    return render_template('articles.html', technology = tech_news, climate = climate_news, uspolitics = us_politics ,sports = sports_news)
