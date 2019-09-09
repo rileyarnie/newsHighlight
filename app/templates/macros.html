@@ -4,8 +4,9 @@
 <div class="container">
 
 
+
 <!-- Container -->
-<div class="row">
+<div class="row mt-4">
         {% for news in batman%}
 
         <!-- Column -->
@@ -44,13 +45,14 @@
 
 
 
-{%macro display_Articles(football)%}
+{%macro display_Articles(technology)%}
 <div class="container">
+    <h2 class="mt-4 text-center "><strong>TECHNOLOGY</strong></h2>
 
 
         <!-- Container -->
-        <div class="row">
-                {% for news in football%}
+        <div class="row mt-4">
+                {% for news in technology%}
         
                 <!-- Column -->
                 <div class="col-md-4 mb-4 d-flex align-items-stretch">
@@ -84,3 +86,130 @@
         
         </div>
 {%endmacro%}
+
+{%macro display_Articles(sports)%}
+<div class="container">
+    <h2 class="mt-4 text-center "><strong>SPORTS</strong></h2>
+
+
+        <!-- Container -->
+        <div class="row mt-4">
+                {% for news in sports%}
+        
+                <!-- Column -->
+                <div class="col-md-4 mb-4 d-flex align-items-stretch">
+              
+                  <!--Card-->
+                  <div class="card">
+              
+                    <!--Card image-->
+                    <div class="view">
+                      <img src="{{news.urlToImage}}" class="card-img-top"
+                        alt="">
+                      <a href="#">
+                        <div class="mask rgba-white-slight"></div>
+                      </a>
+                    </div>
+              
+                    <!--Card content-->
+                    <div class="card-body">
+                      <!--Title-->
+                      <h4 class="card-title uppercase">{{news.title}}</h4>
+                      <!--Text-->
+                      <p>{{news.description}}</p>
+                      <a href="{{news.url}}"><button class="mb-0 waves-effect btn-sm btn-outline-danger">Read More</button></a>
+        
+                    </div>
+              
+                </div>
+                </div>
+                {% endfor %}
+        </div>
+        
+        </div>
+{%endmacro%}
+
+{%macro display_Articles(uspolitics)%}
+<div class="container">
+    <h2 class="mt-4 text-center "><strong>US POLITICS</strong></h2>
+
+
+        <!-- Container -->
+        <div class="row mt-4">
+                {% for news in uspolitics%}
+        
+                <!-- Column -->
+                <div class="col-md-4 mb-4 d-flex align-items-stretch">
+              
+                  <!--Card-->
+                  <div class="card">
+              
+                    <!--Card image-->
+                    <div class="view">
+                      <img src="{{news.urlToImage}}" class="card-img-top"
+                        alt="">
+                      <a href="#">
+                        <div class="mask rgba-white-slight"></div>
+                      </a>
+                    </div>
+              
+                    <!--Card content-->
+                    <div class="card-body">
+                      <!--Title-->
+                      <h4 class="card-title uppercase">{{news.title}}</h4>
+                      <!--Text-->
+                      <p>{{news.description}}</p>
+                      <a href="{{news.url}}"><button class="mb-0 waves-effect btn-sm btn-outline-danger">Read More</button></a>
+        
+                    </div>
+              
+                </div>
+                </div>
+                {% endfor %}
+        </div>
+        
+        </div>
+{%endmacro%}
+
+{%macro display_Articles(climate)%}
+<div class="container">
+    <h2 class="mt-4 text-center "><strong>WEATHER</strong></h2>
+
+
+        <!-- Container -->
+        <div class="row mt-4">
+                {% for news in climate%}
+        
+                <!-- Column -->
+                <div class="col-md-4 mb-4 d-flex align-items-stretch">
+              
+                  <!--Card-->
+                  <div class="card">
+              
+                    <!--Card image-->
+                    <div class="view">
+                      <img src="{{news.urlToImage}}" class="card-img-top"
+                        alt="">
+                      <a href="#">
+                        <div class="mask rgba-white-slight"></div>
+                      </a>
+                    </div>
+              
+                    <!--Card content-->
+                    <div class="card-body">
+                      <!--Title-->
+                      <h4 class="card-title uppercase">{{news.title}}</h4>
+                      <!--Text-->
+                      <p>{{news.description}}</p>
+                      <a href="{{news.url}}"><button class="mb-0 waves-effect btn-sm btn-outline-danger">Read More</button></a>
+        
+                    </div>
+              
+                </div>
+                </div>
+                {% endfor %}
+        </div>
+        
+        </div>
+{%endmacro%}
+
