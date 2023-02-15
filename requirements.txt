@@ -14,4 +14,4 @@ MarkupSafe==1.1.1
 requests==2.22.0
 toml==0.10.0
 urllib3==1.26.5
-Werkzeug==0.15.6
+Werkzeug==2.2.3
